@@ -131,9 +131,26 @@
 		D800CFE5168EF0D000B1BB03 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = D800CFE4168EF0D000B1BB03 /* vec4.c */; };
 		D800CFEA168EF0D000B1BB03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFE9168EF0D000B1BB03 /* main.m */; };
 		D800CFED168EF0D000B1BB03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEC168EF0D000B1BB03 /* AppDelegate.m */; };
-		D800CFF0168EF0D000B1BB03 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEF168EF0D000B1BB03 /* HelloWorldLayer.m */; };
+		D800CFF0168EF0D000B1BB03 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEF168EF0D000B1BB03 /* GameLayer.m */; };
 		D800CFF3168EF0D000B1BB03 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFF2168EF0D000B1BB03 /* IntroLayer.m */; };
+		D800D004168F84B000B1BB03 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D003168F84B000B1BB03 /* Grid.m */; };
+		D800D00D168F8FF100B1BB03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800D00C168F8FF100B1BB03 /* SenTestingKit.framework */; };
+		D800D00E168F8FF100B1BB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800CE6B168EF0CE00B1BB03 /* UIKit.framework */; };
+		D800D00F168F8FF100B1BB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800CE6D168EF0CE00B1BB03 /* Foundation.framework */; };
+		D800D015168F8FF100B1BB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D800D013168F8FF100B1BB03 /* InfoPlist.strings */; };
+		D800D018168F8FF100B1BB03 /* GridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D017168F8FF100B1BB03 /* GridTests.m */; };
+		D800D01F168FAFE300B1BB03 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D003168F84B000B1BB03 /* Grid.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D800D01D168FAFD600B1BB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D800CE54168EF0CE00B1BB03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D800CE5C168EF0CE00B1BB03;
+			remoteInfo = xcodegit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D800CE5D168EF0CE00B1BB03 /* xcodegit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcodegit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,10 +411,19 @@
 		D800CFE9168EF0D000B1BB03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D800CFEB168EF0D000B1BB03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D800CFEC168EF0D000B1BB03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D800CFEE168EF0D000B1BB03 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		D800CFEF168EF0D000B1BB03 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		D800CFEE168EF0D000B1BB03 /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		D800CFEF168EF0D000B1BB03 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		D800CFF1168EF0D000B1BB03 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		D800CFF2168EF0D000B1BB03 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		D800D003168F84B000B1BB03 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		D800D005168F84B900B1BB03 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		D800D00B168F8FF100B1BB03 /* GridTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D800D00C168F8FF100B1BB03 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D800D012168F8FF100B1BB03 /* GridTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GridTests-Info.plist"; sourceTree = "<group>"; };
+		D800D014168F8FF100B1BB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D800D016168F8FF100B1BB03 /* GridTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridTests.h; sourceTree = "<group>"; };
+		D800D017168F8FF100B1BB03 /* GridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridTests.m; sourceTree = "<group>"; };
+		D800D019168F8FF100B1BB03 /* GridTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GridTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +443,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D800D007168F8FF100B1BB03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D800D00D168F8FF100B1BB03 /* SenTestingKit.framework in Frameworks */,
+				D800D00E168F8FF100B1BB03 /* UIKit.framework in Frameworks */,
+				D800D00F168F8FF100B1BB03 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -424,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				D800CE73168EF0CE00B1BB03 /* xcodegit */,
+				D800D010168F8FF100B1BB03 /* GridTests */,
 				D800CE60168EF0CE00B1BB03 /* Frameworks */,
 				D800CE5E168EF0CE00B1BB03 /* Products */,
 			);
@@ -433,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				D800CE5D168EF0CE00B1BB03 /* xcodegit.app */,
+				D800D00B168F8FF100B1BB03 /* GridTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,6 +487,7 @@
 				D800CE6D168EF0CE00B1BB03 /* Foundation.framework */,
 				D800CE6F168EF0CE00B1BB03 /* CoreGraphics.framework */,
 				D800CE71168EF0CE00B1BB03 /* GameKit.framework */,
+				D800D00C168F8FF100B1BB03 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -456,10 +495,12 @@
 		D800CE73168EF0CE00B1BB03 /* xcodegit */ = {
 			isa = PBXGroup;
 			children = (
+				D800D005168F84B900B1BB03 /* Grid.h */,
+				D800D003168F84B000B1BB03 /* Grid.m */,
 				D800CFEB168EF0D000B1BB03 /* AppDelegate.h */,
 				D800CFEC168EF0D000B1BB03 /* AppDelegate.m */,
-				D800CFEE168EF0D000B1BB03 /* HelloWorldLayer.h */,
-				D800CFEF168EF0D000B1BB03 /* HelloWorldLayer.m */,
+				D800CFEE168EF0D000B1BB03 /* GameLayer.h */,
+				D800CFEF168EF0D000B1BB03 /* GameLayer.m */,
 				D800CFF1168EF0D000B1BB03 /* IntroLayer.h */,
 				D800CFF2168EF0D000B1BB03 /* IntroLayer.m */,
 				D800CE74168EF0CE00B1BB03 /* Resources */,
@@ -832,6 +873,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D800D010168F8FF100B1BB03 /* GridTests */ = {
+			isa = PBXGroup;
+			children = (
+				D800D016168F8FF100B1BB03 /* GridTests.h */,
+				D800D017168F8FF100B1BB03 /* GridTests.m */,
+				D800D011168F8FF100B1BB03 /* Supporting Files */,
+			);
+			path = GridTests;
+			sourceTree = "<group>";
+		};
+		D800D011168F8FF100B1BB03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D800D012168F8FF100B1BB03 /* GridTests-Info.plist */,
+				D800D013168F8FF100B1BB03 /* InfoPlist.strings */,
+				D800D019168F8FF100B1BB03 /* GridTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -851,6 +912,25 @@
 			productName = xcodegit;
 			productReference = D800CE5D168EF0CE00B1BB03 /* xcodegit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D800D00A168F8FF100B1BB03 /* GridTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D800D01A168F8FF100B1BB03 /* Build configuration list for PBXNativeTarget "GridTests" */;
+			buildPhases = (
+				D800D006168F8FF100B1BB03 /* Sources */,
+				D800D007168F8FF100B1BB03 /* Frameworks */,
+				D800D008168F8FF100B1BB03 /* Resources */,
+				D800D009168F8FF100B1BB03 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D800D01E168FAFD600B1BB03 /* PBXTargetDependency */,
+			);
+			name = GridTests;
+			productName = GridTests;
+			productReference = D800D00B168F8FF100B1BB03 /* GridTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -873,6 +953,7 @@
 			projectRoot = "";
 			targets = (
 				D800CE5C168EF0CE00B1BB03 /* xcodegit */,
+				D800D00A168F8FF100B1BB03 /* GridTests */,
 			);
 		};
 /* End PBXProject section */
@@ -898,7 +979,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D800D008168F8FF100B1BB03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D800D015168F8FF100B1BB03 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D800D009168F8FF100B1BB03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D800CE59168EF0CE00B1BB03 /* Sources */ = {
@@ -1007,12 +1112,41 @@
 				D800CFE5168EF0D000B1BB03 /* vec4.c in Sources */,
 				D800CFEA168EF0D000B1BB03 /* main.m in Sources */,
 				D800CFED168EF0D000B1BB03 /* AppDelegate.m in Sources */,
-				D800CFF0168EF0D000B1BB03 /* HelloWorldLayer.m in Sources */,
+				D800CFF0168EF0D000B1BB03 /* GameLayer.m in Sources */,
 				D800CFF3168EF0D000B1BB03 /* IntroLayer.m in Sources */,
+				D800D004168F84B000B1BB03 /* Grid.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D800D006168F8FF100B1BB03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D800D01F168FAFE300B1BB03 /* Grid.m in Sources */,
+				D800D018168F8FF100B1BB03 /* GridTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D800D01E168FAFD600B1BB03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D800CE5C168EF0CE00B1BB03 /* xcodegit */;
+			targetProxy = D800D01D168FAFD600B1BB03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D800D013168F8FF100B1BB03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D800D014168F8FF100B1BB03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D800CFF4168EF0D000B1BB03 /* Debug */ = {
@@ -1095,6 +1229,56 @@
 			};
 			name = Release;
 		};
+		D800D01B168F8FF100B1BB03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridTests/GridTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "GridTests/GridTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D800D01C168F8FF100B1BB03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridTests/GridTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "GridTests/GridTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1115,6 +1299,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D800D01A168F8FF100B1BB03 /* Build configuration list for PBXNativeTarget "GridTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D800D01B168F8FF100B1BB03 /* Debug */,
+				D800D01C168F8FF100B1BB03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
