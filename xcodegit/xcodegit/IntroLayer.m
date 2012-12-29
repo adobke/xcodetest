@@ -49,7 +49,7 @@
 	} else {
 		background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 	}
-	background.position = ccp(size.width/2, size.height/2);
+	background.position = ccp(size.width*3/4, size.height/2);
 
 	// add the label as a child to this Layer
 	[self addChild: background];
