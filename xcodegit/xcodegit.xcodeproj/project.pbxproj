@@ -1065,6 +1065,7 @@
 				GCC_PREFIX_HEADER = xcodegit/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"xcodegit/libs/kazmath/include\"";
 				INFOPLIST_FILE = xcodegit/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1083,6 +1084,7 @@
 				GCC_PREFIX_HEADER = xcodegit/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"xcodegit/libs/kazmath/include\"";
 				INFOPLIST_FILE = xcodegit/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1112,6 +1114,7 @@
 				D800CFF8168EF0D000B1BB03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
