@@ -29,9 +29,10 @@
 -(bool) isMutableAtRow:(int) row andColumn:(int) column;
 -(bool) isValue:(int) value consistentAtRow:(int) row andColumn:(int) column;
 
-// PRIVATE
 -(void) setImmutableValue:(int) value atRow:(int) row atColumn:(int) column;
 -(void) setMutableValue:(int) value atRow:(int) row atColumn:(int) column;
+-(void) setSolution:(int) value atRow:(int) row atColumn:(int) column;
+-(int) solutionAtRow:(int) row andColumn:(int) column;
 -(void) emptyCellAtRow:(int) row andColumn:(int) column;
 -(bool) isValue:(int)value consistentInRow:(int)row;
 -(bool) isValue:(int)value consistentInColumn:(int)column;

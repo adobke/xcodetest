@@ -140,6 +140,8 @@
 		D800D015168F8FF100B1BB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D800D013168F8FF100B1BB03 /* InfoPlist.strings */; };
 		D800D018168F8FF100B1BB03 /* GridTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D017168F8FF100B1BB03 /* GridTests.m */; };
 		D800D01F168FAFE300B1BB03 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D003168F84B000B1BB03 /* Grid.m */; };
+		D8914AD0169A0F0800D1838F /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = D8914ACF169A0F0800D1838F /* Solver.m */; };
+		D8914AD2169A323C00D1838F /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = D8914ACF169A0F0800D1838F /* Solver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,6 +426,8 @@
 		D800D016168F8FF100B1BB03 /* GridTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridTests.h; sourceTree = "<group>"; };
 		D800D017168F8FF100B1BB03 /* GridTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridTests.m; sourceTree = "<group>"; };
 		D800D019168F8FF100B1BB03 /* GridTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GridTests-Prefix.pch"; sourceTree = "<group>"; };
+		D8914ACE169A0F0800D1838F /* Solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solver.h; sourceTree = "<group>"; };
+		D8914ACF169A0F0800D1838F /* Solver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +499,8 @@
 		D800CE73168EF0CE00B1BB03 /* xcodegit */ = {
 			isa = PBXGroup;
 			children = (
+				D8914ACE169A0F0800D1838F /* Solver.h */,
+				D8914ACF169A0F0800D1838F /* Solver.m */,
 				D800D005168F84B900B1BB03 /* Grid.h */,
 				D800D003168F84B000B1BB03 /* Grid.m */,
 				D800CFEB168EF0D000B1BB03 /* AppDelegate.h */,
@@ -1115,6 +1121,7 @@
 				D800CFF0168EF0D000B1BB03 /* GameLayer.m in Sources */,
 				D800CFF3168EF0D000B1BB03 /* IntroLayer.m in Sources */,
 				D800D004168F84B000B1BB03 /* Grid.m in Sources */,
+				D8914AD0169A0F0800D1838F /* Solver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,6 +1129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8914AD2169A323C00D1838F /* Solver.m in Sources */,
 				D800D01F168FAFE300B1BB03 /* Grid.m in Sources */,
 				D800D018168F8FF100B1BB03 /* GridTests.m in Sources */,
 			);
@@ -1307,6 +1315,7 @@
 				D800D01C168F8FF100B1BB03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

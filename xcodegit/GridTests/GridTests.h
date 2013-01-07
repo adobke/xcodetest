@@ -8,6 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import "Grid.h"
+#import "Solver.h"
 
 @interface GridTests : SenTestCase
 
