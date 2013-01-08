@@ -131,7 +131,7 @@
 		D800CFE5168EF0D000B1BB03 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = D800CFE4168EF0D000B1BB03 /* vec4.c */; };
 		D800CFEA168EF0D000B1BB03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFE9168EF0D000B1BB03 /* main.m */; };
 		D800CFED168EF0D000B1BB03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEC168EF0D000B1BB03 /* AppDelegate.m */; };
-		D800CFF0168EF0D000B1BB03 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEF168EF0D000B1BB03 /* GameLayer.m */; };
+		D800CFF0168EF0D000B1BB03 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFEF168EF0D000B1BB03 /* MenuLayer.m */; };
 		D800CFF3168EF0D000B1BB03 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D800CFF2168EF0D000B1BB03 /* IntroLayer.m */; };
 		D800D004168F84B000B1BB03 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D003168F84B000B1BB03 /* Grid.m */; };
 		D800D00D168F8FF100B1BB03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800D00C168F8FF100B1BB03 /* SenTestingKit.framework */; };
@@ -142,6 +142,7 @@
 		D800D01F168FAFE300B1BB03 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = D800D003168F84B000B1BB03 /* Grid.m */; };
 		D8914AD0169A0F0800D1838F /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = D8914ACF169A0F0800D1838F /* Solver.m */; };
 		D8914AD2169A323C00D1838F /* Solver.m in Sources */ = {isa = PBXBuildFile; fileRef = D8914ACF169A0F0800D1838F /* Solver.m */; };
+		D8914AD5169A498E00D1838F /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8914AD4169A498E00D1838F /* GameLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -413,8 +414,8 @@
 		D800CFE9168EF0D000B1BB03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D800CFEB168EF0D000B1BB03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D800CFEC168EF0D000B1BB03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D800CFEE168EF0D000B1BB03 /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
-		D800CFEF168EF0D000B1BB03 /* GameLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		D800CFEE168EF0D000B1BB03 /* MenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		D800CFEF168EF0D000B1BB03 /* MenuLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		D800CFF1168EF0D000B1BB03 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		D800CFF2168EF0D000B1BB03 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		D800D003168F84B000B1BB03 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
@@ -428,6 +429,8 @@
 		D800D019168F8FF100B1BB03 /* GridTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GridTests-Prefix.pch"; sourceTree = "<group>"; };
 		D8914ACE169A0F0800D1838F /* Solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solver.h; sourceTree = "<group>"; };
 		D8914ACF169A0F0800D1838F /* Solver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Solver.m; sourceTree = "<group>"; };
+		D8914AD3169A498E00D1838F /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		D8914AD4169A498E00D1838F /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,8 +508,10 @@
 				D800D003168F84B000B1BB03 /* Grid.m */,
 				D800CFEB168EF0D000B1BB03 /* AppDelegate.h */,
 				D800CFEC168EF0D000B1BB03 /* AppDelegate.m */,
-				D800CFEE168EF0D000B1BB03 /* GameLayer.h */,
-				D800CFEF168EF0D000B1BB03 /* GameLayer.m */,
+				D800CFEE168EF0D000B1BB03 /* MenuLayer.h */,
+				D800CFEF168EF0D000B1BB03 /* MenuLayer.m */,
+				D8914AD3169A498E00D1838F /* GameLayer.h */,
+				D8914AD4169A498E00D1838F /* GameLayer.m */,
 				D800CFF1168EF0D000B1BB03 /* IntroLayer.h */,
 				D800CFF2168EF0D000B1BB03 /* IntroLayer.m */,
 				D800CE74168EF0CE00B1BB03 /* Resources */,
@@ -1118,10 +1123,11 @@
 				D800CFE5168EF0D000B1BB03 /* vec4.c in Sources */,
 				D800CFEA168EF0D000B1BB03 /* main.m in Sources */,
 				D800CFED168EF0D000B1BB03 /* AppDelegate.m in Sources */,
-				D800CFF0168EF0D000B1BB03 /* GameLayer.m in Sources */,
+				D800CFF0168EF0D000B1BB03 /* MenuLayer.m in Sources */,
 				D800CFF3168EF0D000B1BB03 /* IntroLayer.m in Sources */,
 				D800D004168F84B000B1BB03 /* Grid.m in Sources */,
 				D8914AD0169A0F0800D1838F /* Solver.m in Sources */,
+				D8914AD5169A498E00D1838F /* GameLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,6 +1207,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1213,6 +1221,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1221,6 +1231,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = xcodegit/Prefix.pch;
@@ -1232,6 +1244,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

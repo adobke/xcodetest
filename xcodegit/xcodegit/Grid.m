@@ -7,6 +7,8 @@
 //
 
 #import "Grid.h"
+#import "Solver.h"
+
 
 @implementation Grid
 
@@ -23,9 +25,9 @@
     return self;
 }
 
--(id) initWithGrid: (Grid*) grid {
-    if (self = [super init])
-    {
+-(id) initWithGrid: (Grid*) grid
+{
+    if (self = [super init]) {
         /* Initialize the grid to be completely mutable and completely empty */
         for (int i = 0; i < GRID_SIZE; ++i)
             for (int j = 0; j < GRID_SIZE; ++j) {
@@ -33,6 +35,28 @@
                 _mutable[i][j] = grid->_mutable[i][j];
                 _solution[i][j] = grid->_solution[i][j];
             }
+    }
+    return self;
+}
+
+-(id) initWithString: (NSString*) gridString
+{
+    if (self = [super init]) {
+        assert([gridString length] == 81);
+        for (int i = 0; i < GRID_SIZE; ++i) {
+            for (int j = 0; j < GRID_SIZE; ++j) {
+                int val = [gridString characterAtIndex:GRID_SIZE*i+j]-48;
+                if ( (val >= 1) && (val <= GRID_SIZE)) {
+                    [self setImmutableValue:val atRow:i atColumn:j];
+                    //_data[j][i] = val;
+                    //_mutable[i][j] = false;
+                } else {
+                    [self emptyCellAtRow:i andColumn:j];
+                    //_data[j][i] = EMPTY;
+                    //_mutable[i][j] = true;
+                }
+            }
+        }
     }
     return self;
 }
@@ -197,18 +221,82 @@
     for (int i = 0; i < 9; i++)
         for (int j = 0; j < 9; j++)
             [self emptyCellAtRow:i andColumn:j];
-    
+    Solver *solver = [[Solver alloc] init];
     //SudokuGenerator *generator = [[SudokuGenerator alloc] init];
     
    // [generator generateNewGrid];
    // [generator copyIntoGrid:self];
+    
+    
+    
+    
 }
 
+-(void) emptyGridCells:(int) cellCount
+{
+    /* Takes a completely filled in Sudoku grid and empties the specified amount of cells, while ensuring there is still a unique solution */
+    int retries = 0;
+    int cellsEmptied = 0;
+    Solver *solver = [[Solver alloc] init];
+    
+    while (cellsEmptied < cellCount && retries < 5) {
+        int row = arc4random() % 9;
+        int col = arc4random() % 9;
+        int oldValue = [self getValueAtRow:row andColumn:col];
+        
+        [self emptyCellAtRow:row andColumn:col];
+        
+        if (cellsEmptied > 3) {
+            /* We can always empty 3 cells, without needing to check that the solutions are unique */
+            
+            BOOL uniqueSolution = YES;
+            
+            //for (int i = 1; i <= 9; ++i) {
+            //    if (i == oldValue) continue; /* Skip the old value */
+           //     if (![self isValue:i consistentAtRow:row andColumn:col]) continue; /* Don't try values that don't work for sure */
+                
+           //     [self setValue:i atRow:row atColumn:col];
+                
+                if ([solver getNumSolsFor: self] > 1) { /* If the grid has a solution here, the solution is not unique, so we can't remove oldValue */
+                    uniqueSolution = NO;
+                    [self setValue:oldValue atRow:row atColumn:col];
+                    //break;
+                }
+           // }
+            
+            if (uniqueSolution) {
+                cellsEmptied++;
+                retries = 0;
+                [self emptyCellAtRow:row andColumn:col];
+                //printf("Emptied: %d\n", cellsEmptied);
+                //[grid printGrid];
+            } else {
+                [self setValue:oldValue atRow:row atColumn:col];
+                retries++;
+            }
+        } else {
+            cellsEmptied ++;
+            //[grid printGrid];
+        }
+    }
+}
+
+
 -(BOOL) generateGridStartingAtRow:(int) row andColumn: (int) column
+{
+    int* count = malloc(sizeof(int));
+    *count = 0;
+    return [self generateGridStartingAtRow:row andColumn:column rCount: count];
+}
+
+-(BOOL) generateGridStartingAtRow:(int) row andColumn: (int) column rCount:(int*) rc
 {
     int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int numLength = 9;
     
+    if ((*rc)++ > 1000000)
+        return NO;
+
     while (numLength > 0) {
         /* Choose random, unchosen number */
         int index = arc4random() % numLength;
@@ -231,7 +319,7 @@
             int newRow = column == 8 ? row + 1 : row;
             int newColumn = (column + 1) % 9;
             
-            if ([self generateGridStartingAtRow:newRow andColumn:newColumn]) 
+            if ([self generateGridStartingAtRow:newRow andColumn:newColumn rCount:rc])
                 return YES;
             
             
@@ -242,5 +330,45 @@
     
     /* If no number works, then there is no grid in this direction, return false */
     return NO;
+}
+
+-(const char*) toString
+{
+    NSMutableString* string = [[NSMutableString alloc] init];
+    for (int i = 0; i < GRID_SIZE; ++i) {
+        for (int j = 0; j < GRID_SIZE; ++j) {
+            
+            if (_data[i][j] != EMPTY)
+                [string appendFormat:@"%i", _data[i][j]];
+            else
+                [string appendString:@"."];
+        }
+    }
+    return [string UTF8String];
+}
+
+int main(int argc, const char* argv []) {
+    printf("Begin\n");
+    FILE *fp = fopen("outputSudokus.txt","a");
+    Grid* grid = [[Grid alloc] init];
+    
+    for(int i = 0; i < 10000; ++i)
+    {
+        //printf("Generating\n");
+        if(![grid generateGridStartingAtRow:0 andColumn:0]) {
+            i--;
+            continue;
+        }
+        //printf("%s\n",[grid toString]);
+        //printf("Emptying\n");
+        [grid emptyGridCells:80];
+        fprintf(fp,"%s\n",[grid toString]);
+        //printf("%s\n",[grid toString]);
+
+        if( (i % 10) == 0)
+            printf("%i\n",i);
+    }
+    fclose(fp);
+    return 0;
 }
 @end

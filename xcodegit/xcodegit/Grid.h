@@ -20,7 +20,7 @@
 }
 
 -(id) initWithGrid:(Grid*) grid;
-
+-(id) initWithString: (NSString*) gridString;
 -(void) printGrid;
 -(void) getNewGrid;
 -(void) setValue:(int) value atRow:(int) row atColumn:(int) column;

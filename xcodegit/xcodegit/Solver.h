@@ -10,14 +10,11 @@
 #import "Grid.h"
 
 @interface Solver : NSObject {
-    Grid* grid;
+    NSMutableSet *searchSpace[9][9];
 }
-@property (readonly) Grid *solution;
 
-
--(id) initWithGrid: (Grid*) initGrid;
-
--(int) getNumSols;
--(bool) setSolution;
+-(int) getNumSolsFor: (Grid*) grid;
+-(bool) setSolutionFor: (Grid*) grid;
+-(int) solveAndSet:(bool) setSol grid: (Grid*) grid;
 
 @end

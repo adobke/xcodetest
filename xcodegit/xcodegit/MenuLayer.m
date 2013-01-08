@@ -1,12 +1,12 @@
 // Import the interfaces
-#import "GameLayer.h"
+#import "MenuLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
-#pragma mark - GameLayer
+#pragma mark - MenuLayer
 
-@implementation GameLayer
+@implementation MenuLayer
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -15,7 +15,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-    GameLayer *layer = [GameLayer node];
+    MenuLayer *layer = [MenuLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -33,15 +33,31 @@
 		
 		// create and initialize a Label
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Sudoku" fontName:@"Marker Felt" fontSize:64];
-        
+
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
-        
+	
 		// position the label on the center of the screen
 		label.position =  ccp( size.width /2 , size.height/2 );
 		
 		// add the label as a child to this Layer
 		[self addChild: label];
+		
+		
+
+		// Leaderboard Menu Item using blocks
+		CCMenuItem *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender) {
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameLayer scene] withColor:ccBLACK]];
+		}];
+
+		CCMenu *menu = [CCMenu menuWithItems:start, nil];
+		
+		[menu alignItemsHorizontallyWithPadding:20];
+		[menu setPosition:ccp( size.width/2, size.height/2 - 100)];
+		
+		// Add the menu to the layer
+		[self addChild:menu];
+
 	}
 	return self;
 }

@@ -92,8 +92,8 @@
 {
     Grid* testGrid = [[Grid alloc] init];
     [testGrid generateGridStartingAtRow:0 andColumn:0];
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
-    STAssertEquals(1, [solver getNumSols], @"solver can solve an already solved grid");
+    Solver* solver = [[Solver alloc] init];
+    STAssertEquals(1, [solver getNumSolsFor: testGrid], @"solver can solve an already solved grid");
 }
 
 -(void) testSolverTrivial
@@ -103,8 +103,8 @@
     [testGrid emptyCellAtRow:0 andColumn:0];
     STAssertEquals(EMPTY, [testGrid getValueAtRow:0 andColumn: 0], @"sanity");
     STAssertTrue( [testGrid isMutableAtRow:0 andColumn:0], @"sanity");
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
-    STAssertEquals(1, [solver getNumSols], @"solver can solve a trivial grid");
+    Solver* solver = [[Solver alloc] init];
+    STAssertEquals(1, [solver getNumSolsFor: testGrid], @"solver can solve a trivial grid");
 }
 
 -(void) testSolverSimple
@@ -113,8 +113,8 @@
     [testGrid generateGridStartingAtRow:0 andColumn:0];
     [testGrid emptyCellAtRow:0 andColumn:0];
     [testGrid emptyCellAtRow:9 andColumn:9];
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
-    STAssertEquals(1, [solver getNumSols], @"solver can solve a simple grid");
+    Solver* solver = [[Solver alloc] init];
+    STAssertEquals(1, [solver getNumSolsFor: testGrid], @"solver can solve a simple grid");
 }
 
 -(void) testSolverImpossible
@@ -125,9 +125,9 @@
     [testGrid emptyCellAtRow:0 andColumn:0];
     [testGrid setValue:value atRow:1 atColumn:0];
     STAssertEquals(value, [testGrid getValueAtRow:1 andColumn: 0], @"sanity");
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
-    STAssertEquals(0, [solver getNumSols], @"solver cannot solve an impossible grid");
-    STAssertFalse([solver setSolution], @"solver cannot solve an impossible grid");
+    Solver* solver = [[Solver alloc] init];
+    STAssertEquals(0, [solver getNumSolsFor: testGrid], @"solver cannot solve an impossible grid");
+    STAssertFalse([solver setSolutionFor: testGrid], @"solver cannot solve an impossible grid");
 
 }
 
@@ -155,9 +155,9 @@
     [testGrid emptyCellAtRow:8 andColumn:7];
     [testGrid emptyCellAtRow:8 andColumn:8];
     
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
+    Solver* solver = [[Solver alloc] init];
 
-    NSLog(@"num sols: %i", [solver getNumSols]);
+    NSLog(@"num sols: %i", [solver getNumSolsFor: testGrid]);
 }
 
 -(void) testAKnownGrid
@@ -201,13 +201,29 @@
     [testGrid setImmutableValue:7 atRow:8 atColumn:7];
     [testGrid setImmutableValue:9 atRow:8 atColumn:8];
     
-    Solver* solver = [[Solver alloc] initWithGrid:testGrid];
-    STAssertTrue([solver setSolution], @"solver can solve a known grid");
+    Solver* solver = [[Solver alloc] init];
+    STAssertTrue([solver setSolutionFor: testGrid], @"solver can solve a known grid");
     for (int i = 0; i< GRID_SIZE; ++i) {
         for (int j = 0; j< GRID_SIZE; ++j) {
             STAssertTrue([testGrid solutionAtRow:i andColumn:j] != EMPTY , @"solution finder fills up everything");
         }
     }
 }
+
+
+-(void) testInitWithString
+{
+    Grid* testGrid = [[Grid alloc] initWithString: @"..............3.85..1.2.......5.7.....4...1...9.......5......73..2.1........4...9"];
+    STAssertEquals(EMPTY, [testGrid getValueAtRow:0 andColumn:0], @"value from string is correct");
+    STAssertEquals(EMPTY, [testGrid getValueAtRow:0 andColumn:1], @"value from string is correct");
+    STAssertEquals(EMPTY, [testGrid getValueAtRow:1 andColumn:1], @"value from string is correct");
+    NSLog(@"WTF: %i", [testGrid getValueAtRow:8 andColumn:8]);
+    STAssertEquals(5, [testGrid getValueAtRow:1 andColumn:8], @"value from string is correct");
+
+    STAssertEquals(9, [testGrid getValueAtRow:8 andColumn:8], @"value from string is correct");
+    STAssertEquals(4, [testGrid getValueAtRow:8 andColumn:4], @"value from string is correct");
+    STAssertEquals(3, [testGrid getValueAtRow:1 andColumn:5], @"value from string is correct");
+}
+
 
 @end
