@@ -1,1 +1,1 @@
-gcc -lobjc -framework Foundation grid.m solver.m -o test -std=c99
+gcc -g -lobjc -framework Foundation grid.m solver.m -o test -std=c99

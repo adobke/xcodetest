@@ -294,7 +294,7 @@
     int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int numLength = 9;
     
-    if ((*rc)++ > 1000000)
+    if ((*rc)++ > 10000000)
         return NO;
 
     while (numLength > 0) {
@@ -349,10 +349,23 @@
 
 int main(int argc, const char* argv []) {
     printf("Begin\n");
-    FILE *fp = fopen("outputSudokus.txt","a");
+    FILE *fp = fopen("outputSudokus.txt","r");
+    
+    
+    
+     char board[82];
+    Grid* grid = [[Grid alloc] init];
+    Solver* solver = [[Solver alloc] init];
+    while (fgets (board,sizeof board,fp) != NULL)
+    {
+        [grid initWithString: [NSString stringWithCString:board length:81]];
+        [solver getNumSolsFor:grid];
+    }
+     
+    /*
     Grid* grid = [[Grid alloc] init];
     
-    for(int i = 0; i < 10000; ++i)
+    for(int i = 0; i < 29999; ++i)
     {
         //printf("Generating\n");
         if(![grid generateGridStartingAtRow:0 andColumn:0]) {
@@ -368,6 +381,7 @@ int main(int argc, const char* argv []) {
         if( (i % 10) == 0)
             printf("%i\n",i);
     }
+     */
     fclose(fp);
     return 0;
 }
